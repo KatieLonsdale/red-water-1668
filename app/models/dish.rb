@@ -3,4 +3,12 @@ class Dish < ApplicationRecord
   belongs_to :chef
   has_many :ingredient_dishes
   has_many :ingredients, through: :ingredient_dishes
+
+  def calories
+    ingredients.sum(:calories)
+  end
+
+  def chef_name
+    chef.name
+  end
 end
