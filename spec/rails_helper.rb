@@ -8,12 +8,16 @@ def test_data
   @ingredient_2 = Ingredient.create(name: "noodles", calories: 200)
   @ingredient_3 = Ingredient.create(name: "ricotta", calories: 250)
   @ingredient_4 = Ingredient.create(name: "sausage", calories: 300)
+  @ingredient_5 = Ingredient.create(name: "carnitas", calories: 175)
+  @ingredient_6 = Ingredient.create(name: "salsa", calories: 20)
   @spaghetti_marinara = IngredientDish.create(ingredient: @ingredient_1, dish: @dish_1)
   @spaghetti_noodles = IngredientDish.create(ingredient: @ingredient_2, dish: @dish_1)
   @lasagna_marinara = IngredientDish.create(ingredient: @ingredient_1, dish: @dish_2)
   @lasagna_noodles = IngredientDish.create(ingredient: @ingredient_2, dish: @dish_2)
   @lasagna_ricotta = IngredientDish.create(ingredient: @ingredient_3, dish: @dish_2)
   @lasagna_sausage = IngredientDish.create(ingredient: @ingredient_4, dish: @dish_2)
+  @tacos_carnitas = IngredientDish.create(ingredient: @ingredient_5, dish: @dish_3)
+  @tacos_salsa = IngredientDish.create(ingredient: @ingredient_6, dish: @dish_3)
 end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
