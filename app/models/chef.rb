@@ -8,4 +8,12 @@ class Chef < ApplicationRecord
     ingredients.distinct
   end
 
+  def top_three_ingredients
+    ingredients.joins(:ingredient_dishes)
+              .group(:id)
+              .select("ingredients.*, COUNT(ingredient_dishes.ingredient_id) AS dish_count")
+              .order("dish_count desc")
+              .limit(3)
+  end
+
 end
