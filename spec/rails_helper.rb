@@ -1,3 +1,21 @@
+def test_data
+  @chef_1 = Chef.create(name: "Gordon Ramsey")
+  @chef_2 = Chef.create(name: "Bobby Flay")
+  @dish_1 = @chef_1.dishes.create(name: "spaghetti", description: "saucy and delicious")
+  @dish_2 = @chef_1.dishes.create(name: "lasagna", description: "layers of yum")
+  @dish_3 = @chef_2.dishes.create(name: "tacos", description: "fold up the fun")
+  @ingredient_1 = Ingredient.create(name: "marinara sauce", calories: 120)
+  @ingredient_2 = Ingredient.create(name: "noodles", calories: 200)
+  @ingredient_3 = Ingredient.create(name: "ricotta", calories: 250)
+  @ingredient_4 = Ingredient.create(name: "sausage", calories: 300)
+  @spaghetti_marinara = IngredientDish.create(ingredient: @ingredient_1, dish: @dish_1)
+  @spaghetti_noodles = IngredientDish.create(ingredient: @ingredient_2, dish: @dish_1)
+  @lasagna_marinara = IngredientDish.create(ingredient: @ingredient_1, dish: @dish_2)
+  @lasagna_noodles = IngredientDish.create(ingredient: @ingredient_2, dish: @dish_2)
+  @lasagna_ricotta = IngredientDish.create(ingredient: @ingredient_3, dish: @dish_2)
+  @lasagna_sausage = IngredientDish.create(ingredient: @ingredient_4, dish: @dish_2)
+end
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
